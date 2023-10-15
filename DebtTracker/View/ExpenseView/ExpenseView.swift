@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct ExpenseView: View {
+    
     var body: some View {
-        HStack(alignment: .center, spacing: 20) {
-            Text("ExpenseView")
-            Image(systemName: "dollarsign")
+        
+        NavigationView {
+            List {
+                ForEach(0..<10, id: \.self) { _ in
+                    ExpenseCellView()
+                }
+            }
+            .navigationTitle("Expenses")
+            .navigationBarItems(trailing: HStack {
+                Spacer()
+                Button(action: {
+                    // Artı butona tıklama işlemi burada gerçekleştirilebilir
+                    // Örneğin yeni bir gider ekranını açabilirsiniz
+                }) {
+                    Image(systemName: "plus")
+                        .font(.bold(.headline)())
+                        .tint(.purple)
+                }
+            })
+            
         }
     }
 }

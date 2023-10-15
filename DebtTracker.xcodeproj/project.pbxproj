@@ -15,6 +15,11 @@
 		7B2D872B2ADC102F00318596 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872A2ADC102F00318596 /* ExpenseView.swift */; };
 		7B2D872D2ADC105900318596 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872C2ADC105900318596 /* SettingsView.swift */; };
 		7B2D87302ADC15CF00318596 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872F2ADC15CF00318596 /* TabbedItems.swift */; };
+		7B2D87342ADC1E8100318596 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87332ADC1E8100318596 /* Constants.swift */; };
+		7B2D87392ADC2E6A00318596 /* DebtProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87382ADC2E6A00318596 /* DebtProgressView.swift */; };
+		7B2D873C2ADC2F7500318596 /* DebtExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D873B2ADC2F7500318596 /* DebtExplanationView.swift */; };
+		7B2D873E2ADC2F8000318596 /* DebtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D873D2ADC2F8000318596 /* DebtImageView.swift */; };
+		7B2D87412ADC32DF00318596 /* ExpenseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87402ADC32DF00318596 /* ExpenseCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		7B2D872A2ADC102F00318596 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		7B2D872C2ADC105900318596 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7B2D872F2ADC15CF00318596 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
+		7B2D87332ADC1E8100318596 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B2D87382ADC2E6A00318596 /* DebtProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtProgressView.swift; sourceTree = "<group>"; };
+		7B2D873B2ADC2F7500318596 /* DebtExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtExplanationView.swift; sourceTree = "<group>"; };
+		7B2D873D2ADC2F8000318596 /* DebtImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtImageView.swift; sourceTree = "<group>"; };
+		7B2D87402ADC32DF00318596 /* ExpenseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,7 @@
 		7B2D87212ADC0ED200318596 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7B2D87332ADC1E8100318596 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 		7B2D87262ADC0FCB00318596 /* ExpenseView */ = {
 			isa = PBXGroup;
 			children = (
+				7B2D873A2ADC2F1400318596 /* ExpenseCellView */,
 				7B2D872A2ADC102F00318596 /* ExpenseView.swift */,
 			);
 			path = ExpenseView;
@@ -149,6 +161,17 @@
 				7B2D872F2ADC15CF00318596 /* TabbedItems.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		7B2D873A2ADC2F1400318596 /* ExpenseCellView */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D87402ADC32DF00318596 /* ExpenseCellView.swift */,
+				7B2D87382ADC2E6A00318596 /* DebtProgressView.swift */,
+				7B2D873B2ADC2F7500318596 /* DebtExplanationView.swift */,
+				7B2D873D2ADC2F8000318596 /* DebtImageView.swift */,
+			);
+			path = ExpenseCellView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,12 +244,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2D87392ADC2E6A00318596 /* DebtProgressView.swift in Sources */,
+				7B2D87412ADC32DF00318596 /* ExpenseCellView.swift in Sources */,
 				7B2D872D2ADC105900318596 /* SettingsView.swift in Sources */,
 				7B2D87112ADC0E1400318596 /* DebtTrackerApp.swift in Sources */,
 				7B2D87292ADC0FE400318596 /* IncomeView.swift in Sources */,
 				7B2D87242ADC0F8000318596 /* HomeView.swift in Sources */,
+				7B2D873E2ADC2F8000318596 /* DebtImageView.swift in Sources */,
+				7B2D87342ADC1E8100318596 /* Constants.swift in Sources */,
 				7B2D87302ADC15CF00318596 /* TabbedItems.swift in Sources */,
 				7B2D872B2ADC102F00318596 /* ExpenseView.swift in Sources */,
+				7B2D873C2ADC2F7500318596 /* DebtExplanationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
