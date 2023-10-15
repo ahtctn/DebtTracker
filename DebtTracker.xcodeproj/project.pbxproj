@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7B2D87112ADC0E1400318596 /* DebtTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87102ADC0E1400318596 /* DebtTrackerApp.swift */; };
-		7B2D87132ADC0E1400318596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87122ADC0E1400318596 /* ContentView.swift */; };
 		7B2D87152ADC0E1500318596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2D87142ADC0E1500318596 /* Assets.xcassets */; };
 		7B2D87182ADC0E1500318596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2D87172ADC0E1500318596 /* Preview Assets.xcassets */; };
+		7B2D87242ADC0F8000318596 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87232ADC0F8000318596 /* HomeView.swift */; };
+		7B2D87292ADC0FE400318596 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87282ADC0FE400318596 /* IncomeView.swift */; };
+		7B2D872B2ADC102F00318596 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872A2ADC102F00318596 /* ExpenseView.swift */; };
+		7B2D872D2ADC105900318596 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872C2ADC105900318596 /* SettingsView.swift */; };
+		7B2D87302ADC15CF00318596 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D872F2ADC15CF00318596 /* TabbedItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B2D870D2ADC0E1300318596 /* DebtTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebtTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2D87102ADC0E1400318596 /* DebtTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTrackerApp.swift; sourceTree = "<group>"; };
-		7B2D87122ADC0E1400318596 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B2D87142ADC0E1500318596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B2D87172ADC0E1500318596 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7B2D87232ADC0F8000318596 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B2D87282ADC0FE400318596 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
+		7B2D872A2ADC102F00318596 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		7B2D872C2ADC105900318596 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7B2D872F2ADC15CF00318596 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,12 @@
 		7B2D870F2ADC0E1300318596 /* DebtTracker */ = {
 			isa = PBXGroup;
 			children = (
-				7B2D87102ADC0E1400318596 /* DebtTrackerApp.swift */,
-				7B2D87122ADC0E1400318596 /* ContentView.swift */,
+				7B2D872E2ADC15C100318596 /* Enums */,
+				7B2D87222ADC0EFF00318596 /* App */,
+				7B2D87212ADC0ED200318596 /* Helpers */,
+				7B2D87202ADC0ECF00318596 /* Model */,
+				7B2D871F2ADC0ECC00318596 /* ViewModel */,
+				7B2D871E2ADC0EC600318596 /* View */,
 				7B2D87142ADC0E1500318596 /* Assets.xcassets */,
 				7B2D87162ADC0E1500318596 /* Preview Content */,
 			);
@@ -65,6 +77,78 @@
 				7B2D87172ADC0E1500318596 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B2D871E2ADC0EC600318596 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D87232ADC0F8000318596 /* HomeView.swift */,
+				7B2D87272ADC0FDA00318596 /* SettingsView */,
+				7B2D87252ADC0FC200318596 /* IncomeView */,
+				7B2D87262ADC0FCB00318596 /* ExpenseView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B2D871F2ADC0ECC00318596 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7B2D87202ADC0ECF00318596 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B2D87212ADC0ED200318596 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7B2D87222ADC0EFF00318596 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D87102ADC0E1400318596 /* DebtTrackerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7B2D87252ADC0FC200318596 /* IncomeView */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D87282ADC0FE400318596 /* IncomeView.swift */,
+			);
+			path = IncomeView;
+			sourceTree = "<group>";
+		};
+		7B2D87262ADC0FCB00318596 /* ExpenseView */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D872A2ADC102F00318596 /* ExpenseView.swift */,
+			);
+			path = ExpenseView;
+			sourceTree = "<group>";
+		};
+		7B2D87272ADC0FDA00318596 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D872C2ADC105900318596 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		7B2D872E2ADC15C100318596 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7B2D872F2ADC15CF00318596 /* TabbedItems.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B2D87132ADC0E1400318596 /* ContentView.swift in Sources */,
+				7B2D872D2ADC105900318596 /* SettingsView.swift in Sources */,
 				7B2D87112ADC0E1400318596 /* DebtTrackerApp.swift in Sources */,
+				7B2D87292ADC0FE400318596 /* IncomeView.swift in Sources */,
+				7B2D87242ADC0F8000318596 /* HomeView.swift in Sources */,
+				7B2D87302ADC15CF00318596 /* TabbedItems.swift in Sources */,
+				7B2D872B2ADC102F00318596 /* ExpenseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
