@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct DebtProgressView: View {
-    
-    @State private var progress: Double = 0.77
+    //MARK: PROPERTIES
+    var progress: Double
+    var remainingDebt: Double
+    var totalDebt: Double
+    var paidDebt: Double
     
     var body: some View {
         HStack(spacing: 10) {
-            ProgressView(value: progress, total: 1.0) {
-                Text("12.000$ Paid")
+            ProgressView(value: paidDebt, total: totalDebt) {
+                Text("\(numberFormatter(number: totalDebt)) ₺")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             } currentValueLabel: {
-                Text("% 40 Done")
+                Text("%\(String(format: "%.0f", progress)) Done")
             }
             .tint(.purple)
             .frame(width: 250, alignment: .center)
             
             VStack {
-                Text("4000$")
+                Text("\(numberFormatter(number: remainingDebt))₺")
                     .foregroundColor(.purple)
+                    .font(.system(size: 12))
                 Image(systemName: "checkmark.seal")
                     .font(.title2)
                 
@@ -33,11 +37,25 @@ struct DebtProgressView: View {
             }
         }
     }
+    
+    func numberFormatter(number: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.groupingSeparator = "."
+        numberFormatter.usesGroupingSeparator = true
+        
+        if let formattedNumber = numberFormatter.string(from: NSNumber(value: number)) {
+            return formattedNumber
+        } else {
+            return "\(number)"
+        }
+    }
+    
 }
 
 struct DebtProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        DebtProgressView()
+        DebtProgressView(progress: 5, remainingDebt: 13412, totalDebt: 3423, paidDebt: 2000)
             .previewLayout(.sizeThatFits)
     }
 }

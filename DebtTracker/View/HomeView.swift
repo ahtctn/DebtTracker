@@ -10,13 +10,12 @@ import SwiftUI
 struct HomeView: View {
     @State private var selectedTab = 0
     @State private var selectedTabBarX: CGFloat = 0
-
     let buttonWidth = UIScreen.main.bounds.width / CGFloat(TabbedItems.allCases.count)
 
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
-                ExpenseView()
+                ExpenseView(viewModel: ExpenseViewModel())
                     .tag(0)
                 IncomeView()
                     .tag(1)
@@ -30,7 +29,7 @@ struct HomeView: View {
                 }
             }
             .frame(height: 70)
-            .background(Color.purple.opacity(0.2))
+            .background(Color(Constants.TabBarColorSet.secondary))
             .cornerRadius(35)
             .padding(.horizontal, 10)
             .offset(x: selectedTabBarX)
@@ -40,7 +39,6 @@ struct HomeView: View {
     func customTabButton(item: TabbedItems) -> some View {
         Button {
             withAnimation(.easeIn(duration: 0.3)) {
-                //selectedTabBarX = buttonWidth * CGFloat(item.rawValue)
                 selectedTab = item.rawValue
             }
         } label: {
@@ -51,7 +49,7 @@ struct HomeView: View {
     func customTabItem(imageName: String, title: String, isActive: Bool) -> some View {
         HStack(spacing: 10) {
             Spacer()
-            Image(imageName)
+            Image(systemName: imageName)
                 .resizable()
                 .renderingMode(.template)
                 .foregroundColor(isActive ? .black : .gray)
@@ -64,7 +62,7 @@ struct HomeView: View {
             Spacer()
         }
         .frame(width: .infinity, height: 60)
-        .background(isActive ? Color.purple.opacity(0.4) : Color.clear)
+        .background(isActive ? Color(Constants.TabBarColorSet.primary) : Color.clear)
         .cornerRadius(30)
     }
 }

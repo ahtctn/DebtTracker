@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct DebtImageView: View {
+    
+    var debtImage: String
+    
     var body: some View {
-        Image(Constants.TabBarImages.settings)
+        Image(debtImage)
             .resizable()
             .frame(width: 75, height: 75, alignment: .center)
             .cornerRadius(20)
@@ -18,7 +21,7 @@ struct DebtImageView: View {
 
 struct DebtImageView_Previews: PreviewProvider {
     static var previews: some View {
-        DebtImageView()
+        DebtImageView(debtImage: Constants.TabBarImages.expense)
             .previewLayout(.sizeThatFits)
     }
 }

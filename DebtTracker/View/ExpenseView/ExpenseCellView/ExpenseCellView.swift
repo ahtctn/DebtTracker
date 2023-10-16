@@ -8,26 +8,37 @@
 import SwiftUI
 
 struct ExpenseCellView: View {
-    
-    @State private var progress: Double = 0.4
+    var progress: Double
+    var remaining: Double
+    var total: Double
+    var paid: Double
+    var debtImage: String
+    var title: String
+    var subtitle: String
     
     var body: some View {
-        VStack(alignment: .center, spacing: -15) {
-            HStack(spacing: -10) {
-                DebtImageView()
-                    .padding(20)
-                DebtExplanationView()
-                    .padding(20)
-                
+        HStack(alignment: .center, spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 20) {
+                    DebtImageView(debtImage: debtImage)
+                    DebtExplanationView(title: title, subtitle: subtitle)
+                    Spacer()
+                }
+                DebtProgressView(progress: progress, remainingDebt: remaining, totalDebt: total, paidDebt: paid)
             }
-            DebtProgressView()
-                .padding(10)
+            Image(systemName: "arrow.right")
+                .resizable()
+                .frame(width: 20, height: 20, alignment: .center)
+                .foregroundColor(.purple)
         }
+        
+       
     }
 }
 
 struct ExpenseCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseCellView()
+        ExpenseCellView(progress: 0.5, remaining: 0.5, total: 203, paid: 123, debtImage: Constants.TabBarImages.expense, title: "Deneme deneme", subtitle: "Subtitle subtitle subtitle.")
+            .previewLayout(.sizeThatFits)
     }
 }

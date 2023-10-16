@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct ExpenseView: View {
+    @ObservedObject var viewModel = ExpenseViewModel()
     
     var body: some View {
         
         NavigationView {
             List {
-                ForEach(0..<10, id: \.self) { _ in
-                    ExpenseCellView()
+                ForEach(viewModel.expenses) { expense in
+                    let paidDebt = expense.totalDebt - expense.remainingDebt
+                    let progress = (100 * paidDebt) / expense.totalDebt
+                    
+                    ExpenseCellView(progress: progress, remaining: expense.remainingDebt, total: expense.totalDebt, paid: paidDebt, debtImage: expense.debtImage ?? Constants.TabBarImages.income, title: expense.title, subtitle: expense.subtitle)
                 }
             }
             .navigationTitle("Expenses")
             .navigationBarItems(trailing: HStack {
                 Spacer()
                 Button(action: {
-                    // Artı butona tıklama işlemi burada gerçekleştirilebilir
-                    // Örneğin yeni bir gider ekranını açabilirsiniz
+                    
                 }) {
                     Image(systemName: "plus")
                         .font(.bold(.headline)())
@@ -36,6 +39,6 @@ struct ExpenseView: View {
 
 struct ExpenseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseView()
+        ExpenseView(viewModel: .init())
     }
 }

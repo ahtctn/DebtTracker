@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct DebtExplanationView: View {
+    var title: String
+    var subtitle: String
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Araba Kredi Borcum")
+            
+            Text(title)
                 .fontWeight(.bold)
                 .font(.title2)
 
-            Text("Renault Spring 1996")
+            Text(subtitle)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 
@@ -24,7 +28,7 @@ struct DebtExplanationView: View {
 
 struct DebtExplanationView_Previews: PreviewProvider {
     static var previews: some View {
-        DebtExplanationView()
+        DebtExplanationView(title: "Ekrem Abi Borç", subtitle: "Kumar borcu")
             .previewLayout(.sizeThatFits)
     }
 }

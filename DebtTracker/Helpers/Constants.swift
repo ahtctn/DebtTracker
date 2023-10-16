@@ -13,4 +13,9 @@ enum Constants {
         static let income: String = "income_image"
         static let settings: String = "settings_image"
     }
+    
+    enum TabBarColorSet {
+        static let primary: String = "primaryColor"
+        static let secondary: String = "secondaryColor"
+    }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 enum TabbedItems: Int, CaseIterable {
-    case incomeTab = 0
-    case expenseTab
+    case expenseTab = 0
+    case incomeTab
     case settingsTab
     
     var title: String {
@@ -26,11 +26,11 @@ enum TabbedItems: Int, CaseIterable {
     var iconName: String {
         switch self {
         case .incomeTab:
-            return "income_image"
+            return "newspaper"
         case .expenseTab:
-            return "expense_image"
+            return "camera.filters"
         case .settingsTab:
-            return "settings_image"
+            return "gear"
         }
     }
 }
