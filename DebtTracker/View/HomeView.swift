@@ -15,21 +15,25 @@ struct HomeView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
-                ExpenseView(viewModel: ExpenseViewModel())
+                SummaryView()
                     .tag(0)
-                IncomeView()
+                ExpenseView(viewModel: ExpenseViewModel())
                     .tag(1)
-                SettingsView()
+                IncomeView()
                     .tag(2)
+                SettingsView()
+                    .tag(3)
             }
 
-            HStack(spacing: 0) {
+            HStack(spacing: 50) {
                 ForEach(TabbedItems.allCases, id: \.self) { item in
                     customTabButton(item: item)
                 }
             }
+            
             .frame(height: 70)
             .background(Color(Constants.TabBarColorSet.secondary))
+            
             .cornerRadius(35)
             .padding(.horizontal, 10)
             .offset(x: selectedTabBarX)
@@ -44,16 +48,18 @@ struct HomeView: View {
         } label: {
             customTabItem(imageName: item.iconName, title: item.title, isActive: (selectedTab == item.rawValue))
         }
+        
     }
 
     func customTabItem(imageName: String, title: String, isActive: Bool) -> some View {
-        HStack(spacing: 10) {
+        VStack(spacing: 8) {
             Spacer()
             Image(systemName: imageName)
                 .resizable()
                 .renderingMode(.template)
                 .foregroundColor(isActive ? .black : .gray)
                 .frame(width: 20, height: 20)
+                
             if isActive {
                 Text(title)
                     .font(.system(size: 14))
@@ -61,9 +67,10 @@ struct HomeView: View {
             }
             Spacer()
         }
-        .frame(width: .infinity, height: 60)
+        //MARK: CHOOSED BUTTON HEIGHT
+        .frame(width: isActive ? 100 : 50, height: 70)
         .background(isActive ? Color(Constants.TabBarColorSet.primary) : Color.clear)
-        .cornerRadius(30)
+        .cornerRadius(35)
     }
 }
 

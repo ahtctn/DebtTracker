@@ -30,10 +30,15 @@ struct DebtProgressView: View {
                 Text("\(numberFormatter(number: remainingDebt))₺")
                     .foregroundColor(.purple)
                     .font(.system(size: 12))
-                Image(systemName: "checkmark.seal")
-                    .font(.title2)
-                
-                    .foregroundColor(.purple)
+                if remainingDebt == 0 {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.purple)
+                } else {
+                    Image(systemName: "checkmark.seal")
+                        .font(.title2)
+                        .foregroundColor(.purple)
+                }
             }
         }
     }

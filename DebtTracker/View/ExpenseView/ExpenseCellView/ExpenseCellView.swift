@@ -17,22 +17,17 @@ struct ExpenseCellView: View {
     var subtitle: String
     
     var body: some View {
-        HStack(alignment: .center, spacing: 10) {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack(spacing: 20) {
-                    DebtImageView(debtImage: debtImage)
-                    DebtExplanationView(title: title, subtitle: subtitle)
-                    Spacer()
-                }
-                DebtProgressView(progress: progress, remainingDebt: remaining, totalDebt: total, paidDebt: paid)
+        VStack(alignment: .leading) {
+            HStack(spacing: 10) {
+                DebtImageView(debtImage: debtImage)
+                    .padding(.horizontal, 5)
+                DebtExplanationView(title: title, subtitle: subtitle)
+                    .padding(.horizontal, 5)
+                Spacer()
             }
-            Image(systemName: "arrow.right")
-                .resizable()
-                .frame(width: 20, height: 20, alignment: .center)
-                .foregroundColor(.purple)
+            DebtProgressView(progress: progress, remainingDebt: remaining, totalDebt: total, paidDebt: paid)
+                .padding(.horizontal, 5)
         }
-        
-       
     }
 }
 

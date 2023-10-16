@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class ExpenseModel: Identifiable {
+class ExpenseModel: Identifiable, Hashable {
+    
     let title: String
     let subtitle: String
     let debtImage: String?
@@ -21,6 +22,14 @@ class ExpenseModel: Identifiable {
         self.totalDebt = totalDebt
         self.remainingDebt = remainingDebt
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: ExpenseModel, rhs: ExpenseModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 extension ExpenseModel {
@@ -33,5 +42,7 @@ extension ExpenseModel {
         ExpenseModel(title: "Kitap Harcamaları", subtitle: "D&R ve BKM taksitler", debtImage: Constants.TabBarImages.settings, totalDebt: 1300, remainingDebt: 600),
         ExpenseModel(title: "Ev Kredisi", subtitle: "Hamza abiye borç", debtImage: Constants.TabBarImages.income, totalDebt: 1000, remainingDebt: 500),
         ExpenseModel(title: "Kumar Borcu", subtitle: "Tefeci Hamza abiye borç", debtImage: Constants.TabBarImages.expense, totalDebt: 17_000, remainingDebt: 11_900),
+        ExpenseModel(title: "Erkan'a Borç", subtitle: "İki tane zurna dürüm aldı...", debtImage: Constants.TabBarImages.expense, totalDebt: 240, remainingDebt: 0),
+        ExpenseModel(title: "Nergis'e Sinema Borcu", subtitle: "Üç tane bilet ve patlamış mısır aldı. Ayrıca çok da güzel bir gün geçirdik.", debtImage: Constants.TabBarImages.income, totalDebt: 400, remainingDebt: 20)
     ]
 }

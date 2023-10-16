@@ -8,12 +8,15 @@
 import Foundation
 
 enum TabbedItems: Int, CaseIterable {
-    case expenseTab = 0
+    case summaryTab = 0
+    case expenseTab
     case incomeTab
     case settingsTab
     
     var title: String {
         switch self {
+        case .summaryTab:
+            return "Summary"
         case .incomeTab:
             return "Incomes"
         case .expenseTab:
@@ -25,6 +28,8 @@ enum TabbedItems: Int, CaseIterable {
     
     var iconName: String {
         switch self {
+        case .summaryTab:
+            return "house.fill"
         case .incomeTab:
             return "newspaper"
         case .expenseTab:

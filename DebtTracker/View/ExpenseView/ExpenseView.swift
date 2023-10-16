@@ -9,16 +9,20 @@ import SwiftUI
 
 struct ExpenseView: View {
     @ObservedObject var viewModel = ExpenseViewModel()
+    @State private var selectedExpense: ExpenseModel?
     
     var body: some View {
-        
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(viewModel.expenses) { expense in
                     let paidDebt = expense.totalDebt - expense.remainingDebt
                     let progress = (100 * paidDebt) / expense.totalDebt
                     
-                    ExpenseCellView(progress: progress, remaining: expense.remainingDebt, total: expense.totalDebt, paid: paidDebt, debtImage: expense.debtImage ?? Constants.TabBarImages.income, title: expense.title, subtitle: expense.subtitle)
+                    NavigationLink {
+                        ExpenseDetailView(expense: expense)
+                    } label: {
+                        ExpenseCellView(progress: progress, remaining: expense.remainingDebt, total: expense.totalDebt, paid: paidDebt, debtImage: expense.debtImage ?? Constants.TabBarImages.income, title: expense.title, subtitle: expense.subtitle)
+                    }
                 }
             }
             .navigationTitle("Expenses")
