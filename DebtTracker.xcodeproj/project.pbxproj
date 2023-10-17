@@ -22,6 +22,8 @@
 		7B2D87412ADC32DF00318596 /* ExpenseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87402ADC32DF00318596 /* ExpenseCellView.swift */; };
 		7B2D87462ADD757300318596 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87452ADD757300318596 /* ExpenseModel.swift */; };
 		7B2D87482ADD75F100318596 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2D87472ADD75F100318596 /* ExpenseViewModel.swift */; };
+		7B66758D2ADEADBD00058558 /* ExpenseModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B66758C2ADEADBD00058558 /* ExpenseModelList.swift */; };
+		7B6675922ADEB45E00058558 /* ExpenseDetailChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6675912ADEB45D00058558 /* ExpenseDetailChartView.swift */; };
 		7B8050782ADDE62300AE1D9D /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8050772ADDE62300AE1D9D /* SummaryView.swift */; };
 		7B80507A2ADDF52300AE1D9D /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8050792ADDF52300AE1D9D /* ExpenseDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		7B2D87402ADC32DF00318596 /* ExpenseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCellView.swift; sourceTree = "<group>"; };
 		7B2D87452ADD757300318596 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
 		7B2D87472ADD75F100318596 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
+		7B66758C2ADEADBD00058558 /* ExpenseModelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModelList.swift; sourceTree = "<group>"; };
+		7B6675912ADEB45D00058558 /* ExpenseDetailChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailChartView.swift; sourceTree = "<group>"; };
 		7B8050772ADDE62300AE1D9D /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		7B8050792ADDF52300AE1D9D /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,9 +158,10 @@
 		7B2D87262ADC0FCB00318596 /* ExpenseView */ = {
 			isa = PBXGroup;
 			children = (
+				7B8050792ADDF52300AE1D9D /* ExpenseDetailView.swift */,
+				7B66758E2ADEB43D00058558 /* ExpenseDetailView */,
 				7B2D873A2ADC2F1400318596 /* ExpenseCellView */,
 				7B2D872A2ADC102F00318596 /* ExpenseView.swift */,
-				7B8050792ADDF52300AE1D9D /* ExpenseDetailView.swift */,
 			);
 			path = ExpenseView;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				7B2D87452ADD757300318596 /* ExpenseModel.swift */,
+				7B66758C2ADEADBD00058558 /* ExpenseModelList.swift */,
 			);
 			path = ExpenseModel;
 			sourceTree = "<group>";
@@ -208,6 +214,14 @@
 			children = (
 			);
 			path = ProfileModel;
+			sourceTree = "<group>";
+		};
+		7B66758E2ADEB43D00058558 /* ExpenseDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				7B6675912ADEB45D00058558 /* ExpenseDetailChartView.swift */,
+			);
+			path = ExpenseDetailView;
 			sourceTree = "<group>";
 		};
 		7B8050762ADDE61100AE1D9D /* SummaryView */ = {
@@ -294,8 +308,10 @@
 				7B2D872D2ADC105900318596 /* SettingsView.swift in Sources */,
 				7B2D87112ADC0E1400318596 /* DebtTrackerApp.swift in Sources */,
 				7B2D87292ADC0FE400318596 /* IncomeView.swift in Sources */,
+				7B66758D2ADEADBD00058558 /* ExpenseModelList.swift in Sources */,
 				7B2D87242ADC0F8000318596 /* HomeView.swift in Sources */,
 				7B2D87462ADD757300318596 /* ExpenseModel.swift in Sources */,
+				7B6675922ADEB45E00058558 /* ExpenseDetailChartView.swift in Sources */,
 				7B2D873E2ADC2F8000318596 /* DebtImageView.swift in Sources */,
 				7B2D87342ADC1E8100318596 /* Constants.swift in Sources */,
 				7B2D87302ADC15CF00318596 /* TabbedItems.swift in Sources */,

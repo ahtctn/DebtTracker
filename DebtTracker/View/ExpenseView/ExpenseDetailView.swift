@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ExpenseDetailView: View {
     var expense: ExpenseModel
@@ -16,7 +17,7 @@ struct ExpenseDetailView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding()
-            
+
             // Detaylar burada görüntülenebilir. Örnek:
             Text("Title: \(expense.title)")
             Text("Subtitle: \(expense.subtitle)")
@@ -27,7 +28,7 @@ struct ExpenseDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
-            
+
             Spacer()
         }
         .navigationTitle(expense.title)
@@ -37,6 +38,6 @@ struct ExpenseDetailView: View {
 
 struct ExpenseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpenseDetailView(expense: .init(title: "Title", subtitle: "subtitle", debtImage: Constants.TabBarImages.expense, totalDebt: 1000, remainingDebt: 100))
+        ExpenseDetailView(expense: .init(title: "Title", subtitle: "subtitle", debtImage: Constants.TabBarImages.expense, totalDebt: 1200, remainingDebt: 400, paymentPeriod: .monthly, paymentPlan: 6))
     }
 }
